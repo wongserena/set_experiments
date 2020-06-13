@@ -1,0 +1,46 @@
+import random
+def pr():
+ u = list()
+ for x in range(1,11):
+   u.append(x)
+ u = set(u)
+ p = list()
+ q = list()
+ for x in range(0,10):
+   p.append(random.randint(1,10))
+ for x in range(0,10):
+   q.append(random.randint(1,10))
+ p = set(p)
+ q = set(q)
+ print('p is: ' + str(p))
+ print('q is: ' + str(q))
+ op = input('choose the operation of 2 random sets: and, or, minus, negation, implies; of both sets: ')
+ if op == 'and':
+   and1 = p & q
+   print('p and q is: ' + str(and1))
+ elif op == 'or':
+   or1 = p | q
+   print('p or q is: ' + str(or1))
+ elif op == 'minus':
+   minus1 = p - q
+   minus2 = q - p
+   print('p minus q is: ' + str(minus1))
+   print('q minus p is: ' + str(minus2))
+ elif op == 'negation':
+   notp = u - p
+   notq = u - q
+   print('negation p is: ' + str(notp))
+   print('negation q is: ' + str(notq))
+ elif op == 'implies':
+   notp = u - p
+   notq = u - q
+   im1 = notp | q 
+   im2 = notq | p
+   print('p implies q is: ' + str(im1))
+   print('q implies p is: ' + str(im2))
+again = 'y'
+while again == 'y':
+  pr()
+  again = input('play again? y/n: ') 
+print('bye!')
+
